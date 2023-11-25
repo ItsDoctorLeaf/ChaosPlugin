@@ -1,0 +1,4 @@
+name: ChaosPlugin
+version: '${project.version}'
+main: me.drl.chaosplugin.ChaosPlugin
+api-version: '1.20'
