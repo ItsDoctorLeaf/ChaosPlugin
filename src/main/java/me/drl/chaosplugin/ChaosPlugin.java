@@ -1,5 +1,6 @@
 package me.drl.chaosplugin;
 
+import org.bukkit.ChatColor;
 import org.bukkit.boss.BarColor;
 import org.bukkit.boss.BarStyle;
 import org.bukkit.command.Command;
@@ -20,7 +21,7 @@ public final class ChaosPlugin extends JavaPlugin implements Listener, CommandEx
     int currentEventIndex;
     BossBarManager manager = new BossBarManager(this,"EVENT NULL",BarColor.WHITE, BarStyle.SOLID);
     ChaosSettings settings = new ChaosSettings();
-    final int Seconds = 30;
+    final int Seconds = 10;
 
     Random random = new Random();
     @Override
@@ -51,7 +52,7 @@ public final class ChaosPlugin extends JavaPlugin implements Listener, CommandEx
             @Override
             public void run() {
                 manager.SetProgress(1);
-                progress -= 1f/(float)(Seconds*20);
+                progress -= 1f/(float)(Seconds);
                 if (progress <= 0)
                 {
                     OnCountdownOver();
@@ -60,7 +61,7 @@ public final class ChaosPlugin extends JavaPlugin implements Listener, CommandEx
             }
         };
 
-        barCountdown.runTaskTimer(this,0,20* Seconds);
+        barCountdown.runTaskTimer(this,0,Seconds);
     }
 
     void OnCountdownOver()
@@ -96,6 +97,9 @@ public final class ChaosPlugin extends JavaPlugin implements Listener, CommandEx
     {
         manager.BossBarRemove(event.getPlayer());
     }
+
+
+
 }
 enum ChaosEvent
 {
@@ -132,24 +136,28 @@ class ChaosEventDisplaySetting
 }
 class ChaosSettings
 {
+    String f(String message)
+    {
+        return ChatColor.translateAlternateColorCodes('&',message);
+    }
     public ChaosEventDisplaySetting[] settings = {
-            new ChaosEventDisplaySetting("TNT Rain.",BarColor.RED),
-            new ChaosEventDisplaySetting("Explosive Feet.",BarColor.RED),
+            new ChaosEventDisplaySetting(f("&c")+"TNT Rain.",BarColor.RED),
+            new ChaosEventDisplaySetting(f("&c")+"Explosive Feet.",BarColor.RED),
             new ChaosEventDisplaySetting("To the moon!",BarColor.WHITE),
-            new ChaosEventDisplaySetting("We're surrounded...",BarColor.GREEN),
-            new ChaosEventDisplaySetting("Earthquake!",BarColor.PURPLE),
-            new ChaosEventDisplaySetting("I can't see.",BarColor.PURPLE),
-            new ChaosEventDisplaySetting("ICED",BarColor.BLUE),
-            new ChaosEventDisplaySetting("Gotta go fast!",BarColor.BLUE),
-            new ChaosEventDisplaySetting("Split the seas!",BarColor.BLUE),
+            new ChaosEventDisplaySetting(f("&a")+"We're surrounded...",BarColor.GREEN),
+            new ChaosEventDisplaySetting(f("&d")+"Earthquake!",BarColor.PURPLE),
+            new ChaosEventDisplaySetting(f("&d")+"I can't see.",BarColor.PURPLE),
+            new ChaosEventDisplaySetting(f("&b")+"ICED",BarColor.BLUE),
+            new ChaosEventDisplaySetting(f("&b")+"Gotta go fast!",BarColor.BLUE),
+            new ChaosEventDisplaySetting(f("&b")+"Split the seas!",BarColor.BLUE),
             new ChaosEventDisplaySetting("Gotta fly now",BarColor.WHITE),
-            new ChaosEventDisplaySetting("ITS AN AMBUSH",BarColor.GREEN),
-            new ChaosEventDisplaySetting("Here comes the money.",BarColor.YELLOW),
-            new ChaosEventDisplaySetting("Break it baby",BarColor.YELLOW),
-            new ChaosEventDisplaySetting("I can't be seen?",BarColor.PURPLE),
-            new ChaosEventDisplaySetting("I AM A GOD BEYOND ALL",BarColor.YELLOW),
-            new ChaosEventDisplaySetting("Mortality sucks",BarColor.RED),
-            new ChaosEventDisplaySetting("Kicking from server...",BarColor.RED),
+            new ChaosEventDisplaySetting(f("&a")+"ITS AN AMBUSH",BarColor.GREEN),
+            new ChaosEventDisplaySetting(f("&e")+"Here comes the money.",BarColor.YELLOW),
+            new ChaosEventDisplaySetting(f("&e")+"Break it baby",BarColor.YELLOW),
+            new ChaosEventDisplaySetting(f("&d")+"I can't be seen?",BarColor.PURPLE),
+            new ChaosEventDisplaySetting(f("&e")+"I AM A GOD BEYOND ALL",BarColor.YELLOW),
+            new ChaosEventDisplaySetting(f("&c")+"Mortality sucks",BarColor.RED),
+            new ChaosEventDisplaySetting(f("&c")+"Kicking from server...",BarColor.RED),
             new ChaosEventDisplaySetting("NULL EVENT",BarColor.WHITE),
     };
 }

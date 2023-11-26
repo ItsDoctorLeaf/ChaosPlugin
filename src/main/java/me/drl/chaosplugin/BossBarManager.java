@@ -1,6 +1,7 @@
 package me.drl.chaosplugin;
 
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.boss.BarColor;
 import org.bukkit.boss.BarStyle;
 import org.bukkit.boss.BossBar;
@@ -19,7 +20,7 @@ public class BossBarManager {
 
     public BossBarManager(Plugin plugin, String title, BarColor colour, BarStyle style)
     {
-        bar = Bukkit.createBossBar(title,colour,style);
+        this.bar = Bukkit.createBossBar(title,colour,style);
         SetBossBar(title,colour,style);
         this.plugin = plugin;
     }
@@ -96,5 +97,8 @@ public class BossBarManager {
         SetProgress(1);
     }
 
-
+    String format(String message)
+    {
+        return ChatColor.translateAlternateColorCodes('&',message);
+    }
 }
