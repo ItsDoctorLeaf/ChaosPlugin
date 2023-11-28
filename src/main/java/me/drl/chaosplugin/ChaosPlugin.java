@@ -157,7 +157,7 @@ public final class ChaosPlugin extends JavaPlugin implements Listener, CommandEx
                 break;
             case 29: event = ChaosEvent.EXPLOSIVE_JUMP;
                 break;
-            case 30: event = ChaosEvent.CROTCH_FIRE;
+            case 30: event = ChaosEvent.CROWCH_FIRE;
                 break;
             case 31: event = ChaosEvent.ZUES;
                 break;
@@ -278,7 +278,7 @@ public final class ChaosPlugin extends JavaPlugin implements Listener, CommandEx
                 w.getBlockAt(new Location(p.getWorld(),pl.getX()+1,pl.getY()+1,pl.getZ()+0)).setType(Material.STONE);
                 w.getBlockAt(new Location(p.getWorld(),pl.getX()-1,pl.getY()+1,pl.getZ()+0)).setType(Material.STONE);
                 w.getBlockAt(new Location(p.getWorld(),pl.getX()+0,pl.getY()+1,pl.getZ()+1)).setType(Material.STONE);
-                w.getBlockAt(new Location(p.getWorld(),pl.getX()+1,pl.getY()+1,pl.getZ()-1)).setType(Material.STONE);
+                w.getBlockAt(new Location(p.getWorld(),pl.getX()+0,pl.getY()+1,pl.getZ()-1)).setType(Material.STONE);
             }
             return;
         }
@@ -474,7 +474,6 @@ public final class ChaosPlugin extends JavaPlugin implements Listener, CommandEx
                 p.getWorld().spawnEntity(pl,EntityType.CREEPER);
                 p.getWorld().spawnEntity(pl,EntityType.ZOMBIE);
                 p.getWorld().spawnEntity(pl,EntityType.SKELETON);
-                p.getWorld().spawnEntity(pl,EntityType.GIANT);
 
                 p.getWorld().spawnEntity(pl,EntityType.SPIDER);
                 p.getWorld().spawnEntity(pl,EntityType.HUSK);   p.getWorld().spawnEntity(pl,EntityType.ZOMBIE_VILLAGER);
@@ -561,12 +560,12 @@ public final class ChaosPlugin extends JavaPlugin implements Listener, CommandEx
                 w.getBlockAt(new Location(p.getWorld(),pl.getX()+1,pl.getY(),pl.getZ()+0)).setType(Material.OBSIDIAN);
                 w.getBlockAt(new Location(p.getWorld(),pl.getX()-1,pl.getY(),pl.getZ()+0)).setType(Material.OBSIDIAN);
                 w.getBlockAt(new Location(p.getWorld(),pl.getX()+0,pl.getY(),pl.getZ()+1)).setType(Material.OBSIDIAN);
-                w.getBlockAt(new Location(p.getWorld(),pl.getX()+1,pl.getY(),pl.getZ()-1)).setType(Material.OBSIDIAN);
+                w.getBlockAt(new Location(p.getWorld(),pl.getX()+0,pl.getY(),pl.getZ()-1)).setType(Material.OBSIDIAN);
 
                 w.getBlockAt(new Location(p.getWorld(),pl.getX()+1,pl.getY()+1,pl.getZ()+0)).setType(Material.OBSIDIAN);
                 w.getBlockAt(new Location(p.getWorld(),pl.getX()-1,pl.getY()+1,pl.getZ()+0)).setType(Material.OBSIDIAN);
                 w.getBlockAt(new Location(p.getWorld(),pl.getX()+0,pl.getY()+1,pl.getZ()+1)).setType(Material.OBSIDIAN);
-                w.getBlockAt(new Location(p.getWorld(),pl.getX()+1,pl.getY()+1,pl.getZ()-1)).setType(Material.OBSIDIAN);
+                w.getBlockAt(new Location(p.getWorld(),pl.getX()+0,pl.getY()+1,pl.getZ()-1)).setType(Material.OBSIDIAN);
 
                 w.getBlockAt(new Location(p.getWorld(),pl.getX()+0,pl.getY()-1,pl.getZ()+0)).setType(Material.OBSIDIAN);
             }
@@ -647,7 +646,7 @@ public final class ChaosPlugin extends JavaPlugin implements Listener, CommandEx
     @EventHandler
     void onPlayerMove(PlayerMoveEvent event)
     {
-        if (currentEvent == ChaosEvent.CROTCH_FIRE)
+        if (currentEvent == ChaosEvent.CROWCH_FIRE)
         {
             Player player = event.getPlayer();
             if(player.isSneaking()) {
@@ -740,7 +739,7 @@ public final class ChaosPlugin extends JavaPlugin implements Listener, CommandEx
 
     @EventHandler
     public void onPlayerToggleSneakEvent(PlayerToggleSneakEvent event) {
-        if (currentEvent == ChaosEvent.CROTCH_FIRE)
+        if (currentEvent == ChaosEvent.CROWCH_FIRE)
         {
             Player player = event.getPlayer();
             if(player.isSneaking()) {
@@ -783,7 +782,7 @@ enum ChaosEvent
     TO_THE_SKY_TEMP,
     PHANTOM_SWARM,
     EXPLOSIVE_JUMP,
-    CROTCH_FIRE,
+    CROWCH_FIRE,
     ZUES,
     EXTREME_EARTHQUAKE,
     DOGS,
