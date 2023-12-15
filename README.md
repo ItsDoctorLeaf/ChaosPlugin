@@ -142,3 +142,5 @@ Places a stone wall around the player.
 
 ### All together now
 Brings all players together to the same location.
+
+More events may be added in the future.
