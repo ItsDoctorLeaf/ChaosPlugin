@@ -1,10 +1,16 @@
 # MINECRAFT CHAOS
 ### A Chaotic Plugin for minecraft Java 1.20
 
-## Over 40 different events!
-## Works with multiplayer!
+### Over 40 different events!
+### Works with multiplayer!
+<br>
 
 ## About
+This plugin brings over 40 different chaotic events to minecraft java! Try fighting a wither whilst it rains down mobs atop of you. Or maybe try building a base whilst surrounded with lightning!<br>This Plugin is best experienced in multiplayer with as many people as your server can support.
+<br><br>
+To play, all you have to do is drag and drop the .JAR into your plugins folder. You can change the duration of events in the config, but it has a default of 10, so its playable right off the bat.
+> [!WARNING]
+> Please understand that some events in this mod may be very taxing on your server depending on how many people are online and which event is running.
 
 ## Commands
 ### /startgame
@@ -16,6 +22,7 @@ The config currently contains:
 <b>timeBetweenEvents : default:10</b>
 <br>
 Dictates the duration of every event.
+
 ## Events
 
 ### TNT Rain (Destructive)
