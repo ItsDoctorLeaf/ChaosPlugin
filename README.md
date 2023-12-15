@@ -38,7 +38,8 @@ Blinds the player for the duration of the event.
 
 ### Static
 Freezes the player in place for the duration of the event.<br>
-> :warning: This may cause players to be kicked of flying. If this happens, make sure to enable flying in the server config.
+> [!WARNING]
+> This may cause players to be kicked of flying. If this happens, make sure to enable flying in the server config.
 
 ### Sanic
 Makes the player run super-fast for the duration of the event.
