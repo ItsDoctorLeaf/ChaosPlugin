@@ -16,6 +16,7 @@ To play, all you have to do is drag and drop the .JAR into your plugin's folder.
 Want to be able to play instantly with ease? Try the pre-setup version here, all you have to do is drag and drop the files in and it's all set up:
 https://github.com/ItsDoctorLeaf/ChaosPlugin/tree/origin/main/dragAndDrop
 <br>
+
 ## Commands
 
 ### /startgame
