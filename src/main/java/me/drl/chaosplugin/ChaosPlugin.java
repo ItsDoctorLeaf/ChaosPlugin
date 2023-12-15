@@ -7,6 +7,7 @@ import org.bukkit.boss.BarStyle;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.*;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -31,11 +32,13 @@ public final class ChaosPlugin extends JavaPlugin implements Listener, CommandEx
     ChaosEvent currentEvent = null;
     BossBarManager manager = new BossBarManager(this,"EVENT NULL",BarColor.WHITE, BarStyle.SOLID);
     ChaosSettings settings = new ChaosSettings();
-    final int Seconds = 20/*SECOND*/ * 10;
+    int Seconds = 20/*SECOND*/ * 10;
     Random random = new Random();
+    
+    FileConfiguration config = getConfig();
     @Override
     public void onEnable() {
-
+        LoadConfig();
         // Plugin startup logic
         getLogger().info("--- CHAOS MOD ENABLED ---");
         getServer().getPluginManager().registerEvents(this,this);
@@ -55,6 +58,18 @@ public final class ChaosPlugin extends JavaPlugin implements Listener, CommandEx
         // Plugin shutdown logic
         getLogger().info("--- CHAOS MOD DISABLED ---");
     }
+    void LoadConfig()
+    {
+        reloadConfig();
+        config = this.getConfig();
+        config.addDefault("timeBetweenEvents",10);
+
+        config.options().copyDefaults(true);
+        saveConfig();
+        Seconds = config.getInt("timeBetweenEvents");
+
+    }
+
     void StartCountdown()
     {
         BukkitRunnable barCountdown = new BukkitRunnable() {
