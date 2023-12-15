@@ -12,7 +12,10 @@ To play, all you have to do is drag and drop the .JAR into your plugin's folder.
 > [!WARNING]
 > Please understand that some events in this mod may be very taxing on your server depending on how many people are online and which event is running.
 
+<br>
+Want to be able to play instantly with ease? Try the pre-setup version here, all you have to do is drag and drop the files in and it's all set up:
 ## Commands
+
 ### /startgame
 Starts the game and random events.
 
