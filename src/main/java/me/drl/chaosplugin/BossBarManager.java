@@ -37,53 +37,22 @@ public class BossBarManager {
         SetBossBar(setting.title,setting.colour,bar.getStyle());
     }
 
-    void SetBossBar(String title)
-    {
-        SetBossBar(title,bar.getColor(),bar.getStyle());
-
-    }
-    void SetBossBar(BarStyle style)
-    {
-        SetBossBar(bar.getTitle(), bar.getColor(), style);
-    }
-    void SetBossBar(BarColor colour)
-    {
-        SetBossBar(bar.getTitle(), colour, bar.getStyle());
-    }
-
     void BossBarAdd(Player player)
     {
         bar.addPlayer(player);
 
     }
-    void BossBarAdd(ArrayList<Player> players)
-    {
-        for (Player player : players)
-        {
-            bar.addPlayer(player);
-        }
-    }
+
 
     void BossBarRemove(Player player)
     {
         bar.addPlayer(player);
 
     }
-    void BossBarRemove(ArrayList<Player> players)
-    {
-        for (Player player : players)
-        {
-            bar.addPlayer(player);
-        }
-    }
+
     void Visibility(boolean state)
     {
         bar.setVisible(state);
-    }
-
-    double GetProgress()
-    {
-        return bar.getProgress();
     }
 
     void SetProgress(double progress)
@@ -95,10 +64,5 @@ public class BossBarManager {
     {
         SetBossBar(setting);
         SetProgress(1);
-    }
-
-    String format(String message)
-    {
-        return ChatColor.translateAlternateColorCodes('&',message);
     }
 }

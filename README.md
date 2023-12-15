@@ -11,18 +11,11 @@
 Starts the game and random events.
 
 ## Setup
-in the config there are many variables
+The config currently contains:
 
-timeBetweenEvents : default:10
-
-destructiveEventsEnabled : default:true
-
-positiveEventsEnabled : default:true
-
-mobSpawningEventsEnabled : default:true
-
-WARNING: Deactivating certain events can ruin the experience of the mod. It is best played with all events enabled.
-
+<b>timeBetweenEvents : default:10</b>
+<br>
+Dictates the duration of every event.
 ## Events
 
 ### TNT Rain (Destructive)
@@ -32,7 +25,7 @@ Rains TNT around players when they move.
 Causes people to explode when they take fall damage
 
 ### Low Gravity
-Gives the player high jumpboost and slow-falling.
+Gives the player high jump-boost and slow-falling.
 
 ### Many mobs / Ambush (MobSpawning * Destructive)
 Spawns a group of mobs 5 blocks above the player
@@ -44,7 +37,8 @@ Breaks blocks below the player and drags them downwards.
 Blinds the player for the duration of the event.
 
 ### Static
-Freezes the player in place for the duration of the event.
+Freezes the player in place for the duration of the event.<br>
+> :warning: This may cause players to be kicked of flying. If this happens, make sure to enable flying in the server config.
 
 ### Sanic
 Makes the player run super-fast for the duration of the event.
@@ -62,7 +56,7 @@ Spawns zombies and skeletons above the player
 Gives the player a 30% chance to get a reward upon breaking a block.
 
 ### Instant Break (Positive)
-Gives the player max health, allowing them to break blocks alot faster.
+Gives the player max health, allowing them to break blocks a lot faster.
 
 ### Invisibility (Positive)
 Makes the player invisible for the duration of the event.
@@ -121,7 +115,7 @@ Sets the player on fire if they are crouching.
 ### Zeus (Destructive)
 Spawns lighting all around the player for the duration of the event.
 
-### Extreme earthqyake / Magnitude 10 (Destructive)
+### Extreme Earthquake / Magnitude 10 (Destructive)
 Same as the sinkhole, except it runs twice as fast.
 
 ### Dogs (MobSpawning)
@@ -130,11 +124,11 @@ Spawns dogs above the player and gives them some bones.
 ### Giga giant (MobSpawning)
 Spawns a giant that follows around the player.
 
-### Jumpscare
+### JumpScare
 Blinds the player and plays a sound effect.
 
 ### Withered (MobSpawning * Destructive)
-Spawns a wither at spawn then kills it after the event is over
+Spawns a wither at spawn then kills it after the event the NEXT event is over (Survives for twice the duration of an event.)
 
 ### Get Robbed
 Removes a random item from the players hot bar.

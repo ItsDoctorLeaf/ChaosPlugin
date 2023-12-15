@@ -28,7 +28,7 @@
     TO_THE_SKY_TEMP,
     PHANTOM_SWARM,
     EXPLOSIVE_JUMP,
-    CROUCH_FIRE,
+    \\CROUCH_FIRE,
 
 
     ZUES,

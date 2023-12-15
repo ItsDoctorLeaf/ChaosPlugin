@@ -22,6 +22,7 @@ import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.util.Vector;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 
 
@@ -463,7 +464,7 @@ public final class ChaosPlugin extends JavaPlugin implements Listener, CommandEx
 
                 }
             };
-            killWither.runTaskLater(this,Seconds);
+            killWither.runTaskLater(this,Seconds*2);
         }
         if (currentEvent == ChaosEvent.MANY_MOBS)
         {
@@ -748,6 +749,9 @@ public final class ChaosPlugin extends JavaPlugin implements Listener, CommandEx
         }
 
     }
+
+
+
 
 }
 enum ChaosEvent
